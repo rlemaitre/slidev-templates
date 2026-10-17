@@ -36,6 +36,7 @@
     "export:light": "slidev export example/slides.md --output dist/demo-light.pdf",
     "export:dark": "slidev export example/slides.md --dark --output dist/demo-dark.pdf",
     "smoke": "bash scripts/smoke-pack.sh",
+    "screenshots": "node scripts/screenshots.mjs",
     "check": "npm run test && npm run test:e2e && npm run build:demo && npm run export:light && npm run export:dark && npm run smoke"
   },
   "slidev": {
