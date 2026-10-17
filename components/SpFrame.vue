@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { useSlideContext } from '@slidev/client'
-import { computed } from 'vue'
 import { useMeta } from '../composables/useMeta'
+import { usePageLabel } from '../composables/usePageLabel'
 
 const meta = useMeta()
-const { $page, $nav } = useSlideContext()
-const pad = (n: number): string => String(n).padStart(2, '0')
-const pageLabel = computed(() => `${pad($page.value)} / ${pad($nav.value.total)}`)
+const pageLabel = usePageLabel()
 </script>
 
 <template>

@@ -258,3 +258,56 @@ sequenceDiagram
   deactivate C
   Note over Q,C: at-least-once
 ```
+
+---
+layout: image-left
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/9jFPVQzUgNY.webp
+caption: Fig. 02 / Santorini
+kicker: — Interlude
+---
+
+# Step *back.*
+
+---
+layout: image-right
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/9jFPVQzUgNY.webp
+caption: Fig. 03 / Santorini
+---
+
+# Mirror *image*
+
+---
+layout: image
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/3GmudSL84n4.webp
+caption: Fig. 05 / Monte Pelmo
+---
+
+---
+layout: image
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/3GmudSL84n4.webp
+caption: Fig. 05 / Monte Pelmo
+number: '03'
+title: Above the *clouds*
+---
+
+---
+layout: image
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/3GmudSL84n4.webp
+caption: Fig. 05 / Monte Pelmo
+number: '03'
+title: Above the *clouds*
+titleStyle: overlay
+---
+
+---
+layout: image
+image: /local.webp
+caption: Fig. 06 / Local file
+---
+
+---
+layout: iframe-left
+url: https://example.com
+---
+
+# Live *demo*
