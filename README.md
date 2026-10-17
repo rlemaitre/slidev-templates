@@ -4,6 +4,19 @@ A brutalist Swiss print theme for [Slidev](https://sli.dev): paper, ink, one red
 halftone photos. Light and dark. Every Slidev built-in layout is covered, plus `bullets`, `code`,
 `diagram` and `mermaid`.
 
+| Light | Dark |
+| --- | --- |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/cover-light.jpg" alt="Cover slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/cover-dark.jpg" alt="Cover slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/statement-light.jpg" alt="Statement slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/statement-dark.jpg" alt="Statement slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/bullets-light.jpg" alt="Bullets slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/bullets-dark.jpg" alt="Bullets slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/code-light.jpg" alt="Code slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/code-dark.jpg" alt="Code slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/mermaid-light.jpg" alt="Mermaid slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/mermaid-dark.jpg" alt="Mermaid slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/photo-light.jpg" alt="Fullscreen photo slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/photo-dark.jpg" alt="Fullscreen photo slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/section-light.jpg" alt="Section slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/section-dark.jpg" alt="Section slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/closing-light.jpg" alt="Closing slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/closing-dark.jpg" alt="Closing slide, dark"> |
+
+Browse the whole demo deck at [rlemaitre.github.io/slidev-templates](https://rlemaitre.github.io/slidev-templates/).
+
 ## Install
 
 ```bash

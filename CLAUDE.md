@@ -11,6 +11,7 @@ demo deck, which uses the theme through `theme: ../`.
 - `npm run build:demo`: static build of the demo deck into `dist/demo`
 - `npm run build:pages`: the same build for GitHub Pages (base `/slidev-templates/`) into `dist/pages`
 - `npm run export:light` / `npm run export:dark`: PDF exports into `dist/`
+- `npm run screenshots`: recapture the README screenshots into `docs/screenshots` (starts its own dev server)
 - `npm run smoke`: pack the theme and build a throwaway deck that installs the tarball
 - `npm run check`: all of the above
 
