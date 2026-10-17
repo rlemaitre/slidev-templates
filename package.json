@@ -25,8 +25,7 @@
     "composables",
     "setup",
     "styles",
-    "utils",
-    "assets"
+    "utils"
   ],
   "scripts": {
     "dev": "slidev example/slides.md --port 3030 --open false",

@@ -1,7 +1,7 @@
 # slidev-theme-swiss-print
 
-A brutalist Swiss print theme for [Slidev](https://sli.dev): paper, ink, one red accent, 1px rules, zero radius, a
-paper grain, halftone photos. Light and dark. Every Slidev built-in layout is covered, plus `bullets`, `code`,
+A brutalist Swiss print theme for [Slidev](https://sli.dev): paper, ink, one red accent, 1px rules, zero radius,
+halftone photos. Light and dark. Every Slidev built-in layout is covered, plus `bullets`, `code`,
 `diagram` and `mermaid`.
 
 ## Install

@@ -1,4 +1,4 @@
-/* Surface, grain, type primitives and plain Markdown. */
+/* Surface, type primitives and plain Markdown. */
 *,
 *::before,
 *::after {
@@ -12,18 +12,6 @@
   font-family: var(--sp-font-body);
   font-size: var(--sp-size-body);
   line-height: 1.4;
-}
-
-/* Paper grain over every slide: a small pre-rendered noise tile with its low alpha baked in. Blend modes and SVG
-   filters would make Chrome rasterize whole PDF pages on export (text as pixels, ~100 MB decks). */
-.slidev-layout::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 50;
-  pointer-events: none;
-  background-image: url('../assets/grain.png');
-  background-size: 128px 128px;
 }
 
 .sp-display,

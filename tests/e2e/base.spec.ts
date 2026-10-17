@@ -14,18 +14,10 @@ test('slide surface uses paper and ink of the active scheme', async ({ page }, i
   await expect(h1.locator('em')).toHaveCSS('color', colors(info).accent)
 })
 
-// Blend modes and SVG filters make Chrome rasterize whole PDF pages (text as pixels, ~100 MB decks), so the grain
-// is a small pre-rendered tile with no blend mode, on screen and in exports alike.
-test('grain overlay is a plain tile that does not block clicks', async ({ page }) => {
+test('slides have no background texture', async ({ page }) => {
   const layout = await openSlide(page, SLIDES.hello)
-  const after = await layout.evaluate(el => {
-    const s = getComputedStyle(el, '::after')
-    return { pointer: s.pointerEvents, image: s.backgroundImage, blend: s.mixBlendMode }
-  })
-  expect(after.pointer).toBe('none')
-  expect(after.image).toContain('grain')
-  expect(after.image).not.toContain('feTurbulence')
-  expect(after.blend).toBe('normal')
+  const after = await layout.evaluate(el => getComputedStyle(el, '::after').backgroundImage)
+  expect(after).toBe('none')
 })
 
 test('photo halftone uses no blend mode', async ({ page }) => {
