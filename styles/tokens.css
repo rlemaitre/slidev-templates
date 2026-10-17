@@ -22,6 +22,16 @@
   --sp-size-title: 44px;
   --sp-size-statement: 100px;
   --sp-pad: 32px;
+
+  /* Slidev's own code block variables, mapped to the tokens. */
+  --slidev-code-background: var(--sp-code-bg);
+  --slidev-code-foreground: var(--sp-ink);
+  --slidev-code-font-family: var(--sp-font-mono);
+  --slidev-code-padding: 18px 22px;
+  --slidev-code-font-size: 17px;
+  --slidev-code-line-height: 1.6;
+  --slidev-code-radius: 0;
+  --slidev-code-margin: 16px 0;
 }
 
 html.dark {
@@ -35,4 +45,6 @@ html.dark {
   --sp-hl-string: #e0b060;
   --sp-hl-comment: #8a8a84;
   --sp-grain-blend: screen;
+  --slidev-code-background: var(--sp-code-bg);
+  --slidev-code-foreground: var(--sp-ink);
 }

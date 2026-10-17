@@ -1,0 +1,29 @@
+/* Code blocks: code background, 1px ink border, swiss-print Shiki themes (setup/shiki.ts).
+   Padding, size, radius and background come from the --slidev-code-* variables in tokens.css. */
+.slidev-layout pre {
+  margin: 0;
+  border: var(--sp-rule) solid var(--sp-ink);
+}
+
+.slidev-layout .shiki,
+.slidev-layout .shiki span {
+  color: var(--shiki-light);
+  font-style: var(--shiki-light-font-style);
+}
+
+html.dark .slidev-layout .shiki,
+html.dark .slidev-layout .shiki span {
+  color: var(--shiki-dark);
+  font-style: var(--shiki-dark-font-style);
+}
+
+/* Keywords are weight 500; Shiki themes cannot carry a font weight, so match the keyword hue Shiki inlines. */
+.slidev-layout .shiki span[style*='--shiki-light: #E61919' i],
+.slidev-layout .shiki span[style*='--shiki-light:#E61919' i] {
+  font-weight: 500;
+}
+
+/* The code layout aligns its block with the title column. */
+.sp-code-body .slidev-code-wrapper:first-child {
+  margin-top: 0 !important;
+}

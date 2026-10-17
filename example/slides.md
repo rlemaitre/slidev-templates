@@ -173,3 +173,39 @@ layout: bullets
 - Producers publish
 - Consumers acknowledge
 - Brokers redeliver
+
+---
+layout: code
+figure: '04'
+---
+
+# Retry with *backoff*
+
+```ts
+type Job = { id: string; attempts: number }
+
+const MAX_ATTEMPTS = 5
+
+function delay(job: Job): number {
+  // 1s, 2s, 4s, 8s, 16s
+  return 1000 * 2 ** job.attempts
+}
+```
+
+---
+layout: code
+figure: '05'
+---
+
+# Same in *Scala*
+
+```scala
+final case class Job(id: String, attempts: Int)
+
+val MaxAttempts = 5
+
+def delay(job: Job): Long =
+  // 1s, 2s, 4s, 8s, 16s
+  1000L * math.pow(2, job.attempts).toLong
+```
+
