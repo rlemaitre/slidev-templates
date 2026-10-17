@@ -30,6 +30,7 @@
   "scripts": {
     "dev": "slidev example/slides.md --port 3030 --open false",
     "build:demo": "slidev build example/slides.md --out ../dist/demo",
+    "build:pages": "slidev build example/slides.md --base /slidev-templates/ --out ../dist/pages && cp dist/pages/index.html dist/pages/404.html",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "export:light": "slidev export example/slides.md --output dist/demo-light.pdf",
