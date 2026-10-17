@@ -15,7 +15,7 @@ halftone photos. Light and dark. Every Slidev built-in layout is covered, plus `
 | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/section-light.jpg" alt="Section slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/section-dark.jpg" alt="Section slide, dark"> |
 | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/closing-light.jpg" alt="Closing slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/closing-dark.jpg" alt="Closing slide, dark"> |
 
-Browse the whole demo deck at [rlemaitre.github.io/slidev-templates](https://rlemaitre.github.io/slidev-templates/).
+Browse the whole demo deck at [rlemaitre.com/slidev-templates](https://rlemaitre.com/slidev-templates/).
 
 ## Install
 
@@ -136,7 +136,7 @@ and halftone treatment. `imagePosition` sets the crop focus (default `50% 30%`).
 
 ## Demo
 
-See every layout at [rlemaitre.github.io/slidev-templates](https://rlemaitre.github.io/slidev-templates/). The source
+See every layout at [rlemaitre.com/slidev-templates](https://rlemaitre.com/slidev-templates/). The source
 is `example/slides.md`; run `npm run dev` in this repo to edit it live.
 
 ## Releases
