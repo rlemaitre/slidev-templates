@@ -113,6 +113,9 @@ flowchart LR
 ```
 ````
 
+The theme renders Mermaid itself so diagrams match the design in both color schemas. Your own `setup/mermaid.ts`
+still applies on top (for example `securityLevel: 'loose'` or extra `themeVariables`).
+
 ### Photos
 
 `image` takes an absolute URL or a path in your deck's `public/` folder (`/photo.jpg`). Every photo gets the grayscale

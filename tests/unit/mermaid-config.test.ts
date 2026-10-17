@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { fitSvg, mermaidConfig, withHotClass } from '../../utils/mermaid-config'
+import { fitSvg, mergeMermaidConfig, mermaidConfig, withHotClass } from '../../utils/mermaid-config'
 
 describe('mermaidConfig', () => {
   test('uses the base theme with light paper and ink', () => {
@@ -71,5 +71,25 @@ describe('fitSvg node styles', () => {
     const fitted = fitSvg(svg)
     expect(fitted).toContain('<rect class="basic label-container" x="0">')
     expect(fitted).toContain('<path class="flowchart-link" style="stroke:#d01414 !important">')
+  })
+})
+
+describe('mergeMermaidConfig', () => {
+  const base = mermaidConfig('light')
+
+  test('user setup values win, with themeVariables merged key by key and themeCSS appended', () => {
+    const merged = mergeMermaidConfig(base, { securityLevel: 'loose', themeVariables: { primaryColor: '#123456' }, themeCSS: '.x{}' }, {})
+    expect(merged.securityLevel).toBe('loose')
+    expect(merged.themeVariables).toMatchObject({ primaryColor: '#123456', lineColor: '#0b0b0b' })
+    expect(merged.themeCSS).toContain('.node.hot')
+    expect(merged.themeCSS?.endsWith('.x{}')).toBe(true)
+  })
+
+  test("ignores Slidev's placeholder theme and the per-block theme Slidev forces in dark mode", () => {
+    expect(mergeMermaidConfig(base, { theme: 'default' }, { theme: 'dark' }).theme).toBe('base')
+  })
+
+  test('per-block options win over everything else', () => {
+    expect(mergeMermaidConfig(base, { flowchart: { padding: 20 } }, { flowchart: { padding: 30 } }).flowchart).toMatchObject({ padding: 30, curve: 'linear' })
   })
 })

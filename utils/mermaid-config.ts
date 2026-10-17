@@ -76,3 +76,22 @@ export function withHotClass(code: string, mode: Mode): string {
   if (!isFlowchart || !usesHot || definesHot) return code
   return `${code}\n  classDef hot stroke:${PALETTES[mode].accent},stroke-width:2px`
 }
+
+const NESTED = ['themeVariables', 'flowchart', 'sequence'] as const
+
+function layer(acc: MermaidConfig, next: MermaidConfig): MermaidConfig {
+  const nested = Object.fromEntries(
+    NESTED.filter(key => next[key]).map(key => [key, { ...(acc[key] as object), ...(next[key] as object) }]),
+  )
+  const themeCSS = next.themeCSS ? `${acc.themeCSS ?? ''}\n${next.themeCSS}` : acc.themeCSS
+  return { ...acc, ...next, ...nested, themeCSS }
+}
+
+// Theme config, then the deck's own setup/mermaid.ts, then per-block options. Slidev's placeholder theme ('default')
+// and the 'dark' theme it forces per block are dropped: the palette already follows the color schema.
+export function mergeMermaidConfig(base: MermaidConfig, user: MermaidConfig, block: MermaidConfig): MermaidConfig {
+  const { theme: userTheme, ...userRest } = user
+  const { theme: _blockTheme, ...blockRest } = block
+  const userLayer = userTheme && userTheme !== 'default' ? { ...userRest, theme: userTheme } : userRest
+  return [userLayer, blockRest].reduce(layer, base)
+}
