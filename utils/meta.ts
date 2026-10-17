@@ -50,17 +50,20 @@ export const DEFAULT_META: SpMeta = Object.freeze({
 
 const KEYS = Object.keys(DEFAULT_META) as readonly (keyof SpMeta)[]
 
+// YAML turns an empty key (`links:`) into null; treat it like a missing value.
+const isSet = (value: unknown): boolean => value !== undefined && value !== null
+
 function mergeLayer(base: SpMeta, layer: SpMetaInput | undefined): SpMeta {
   if (!layer) return base
-  const defined = KEYS.filter(key => layer[key] !== undefined)
+  const defined = KEYS.filter(key => isSet(layer[key]))
   return defined.reduce<SpMeta>((acc, key) => {
-    if (key === 'speaker') return { ...acc, speaker: { ...acc.speaker, ...withoutUndefined(layer.speaker ?? {}) } }
+    if (key === 'speaker') return { ...acc, speaker: { ...acc.speaker, ...withoutUnset(layer.speaker ?? {}) } }
     return { ...acc, [key]: layer[key] }
   }, base)
 }
 
-function withoutUndefined<T extends object>(value: T): Partial<T> {
-  return Object.fromEntries(Object.entries(value).filter(([, v]) => v !== undefined)) as Partial<T>
+function withoutUnset<T extends object>(value: T): Partial<T> {
+  return Object.fromEntries(Object.entries(value).filter(([, v]) => isSet(v))) as Partial<T>
 }
 
 export function resolveMeta(...layers: readonly (SpMetaInput | undefined)[]): SpMeta {

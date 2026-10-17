@@ -53,4 +53,12 @@ describe('resolveMeta', () => {
     expect(meta.event).toBe('DevConf 2027')
     expect(meta).not.toHaveProperty('layout')
   })
+
+  test('treats YAML null like a missing value', () => {
+    const deck = { links: null, event: null, speaker: { name: null, role: 'Keynote' } } as unknown as SpMetaInput
+    const meta = resolveMeta(DEFAULT_META, deck)
+    expect(meta.links).toEqual(DEFAULT_META.links)
+    expect(meta.event).toBe('')
+    expect(meta.speaker).toEqual({ ...DEFAULT_META.speaker, role: 'Keynote' })
+  })
 })
