@@ -1,0 +1,100 @@
+/* Shared layout primitives: the frame, ruled grids, columns. */
+.slidev-layout {
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.sp-frame {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 100%;
+}
+
+.sp-frame-off {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+/* Ruled grid: 1px rules are the ink showing through the gaps. */
+.sp-bar,
+.sp-grid {
+  display: grid;
+  gap: var(--sp-rule);
+  background: var(--sp-ink);
+}
+
+.sp-bar > *,
+.sp-grid > * {
+  background: var(--sp-bg);
+  min-width: 0;
+}
+
+.sp-bar {
+  grid-template-columns: 1fr 1fr auto;
+  border-bottom: var(--sp-rule-thick) solid var(--sp-ink);
+}
+
+.sp-bar > * {
+  padding: 10px 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sp-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 20px;
+  border-top: var(--sp-rule) solid var(--sp-ink);
+  color: var(--sp-muted);
+}
+
+.sp-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: var(--sp-pad);
+}
+
+.slidev-layout.center .sp-body {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slidev-layout.full .sp-body {
+  padding: 0;
+}
+
+/* Columns */
+.sp-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  min-height: 0;
+}
+
+.sp-col-left {
+  padding: var(--sp-pad);
+}
+
+.sp-col-right {
+  padding: var(--sp-pad);
+  border-left: var(--sp-rule-thick) solid var(--sp-ink);
+}
+
+.sp-cols-header {
+  padding: var(--sp-pad);
+  border-bottom: var(--sp-rule-thick) solid var(--sp-ink);
+}
+
+.slidev-layout.two-cols .sp-body,
+.slidev-layout.two-cols-header .sp-body {
+  padding: 0;
+}
+
+.slidev-layout.two-cols-header .sp-body {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
