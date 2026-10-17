@@ -1,0 +1,60 @@
+{
+  "name": "slidev-theme-swiss-print",
+  "version": "0.1.0",
+  "description": "A brutalist Swiss print theme for Slidev: paper, ink, one red accent, 1px rules.",
+  "license": "MIT",
+  "author": "Raphaël Lemaitre (https://rlemaitre.com)",
+  "homepage": "https://github.com/rlemaitre/slidev-templates#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlemaitre/slidev-templates.git"
+  },
+  "bugs": "https://github.com/rlemaitre/slidev-templates/issues",
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=22",
+    "slidev": ">=53.0.0"
+  },
+  "files": [
+    "layouts",
+    "components",
+    "composables",
+    "setup",
+    "styles",
+    "utils",
+    "assets"
+  ],
+  "scripts": {
+    "dev": "slidev example/slides.md --port 3030 --open false",
+    "build:demo": "slidev build example/slides.md --out ../dist/demo",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "export:light": "slidev export example/slides.md --output dist/demo-light.pdf",
+    "export:dark": "slidev export example/slides.md --dark --output dist/demo-dark.pdf",
+    "smoke": "bash scripts/smoke-pack.sh",
+    "check": "npm run test && npm run test:e2e && npm run build:demo && npm run export:light && npm run export:dark && npm run smoke"
+  },
+  "slidev": {
+    "colorSchema": "both",
+    "defaults": {
+      "aspectRatio": "16/9",
+      "canvasWidth": 980,
+      "fonts": {
+        "provider": "none",
+        "sans": "Atkinson Hyperlegible Next",
+        "mono": "JetBrains Mono"
+      }
+    }
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@slidev/cli": "^53.0.0",
+    "@slidev/types": "^53.0.0",
+    "playwright-chromium": "^1.64.1",
+    "vitest": "^5.0.5"
+  }
+}
