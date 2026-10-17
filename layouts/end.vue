@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import SpLinks from '../components/SpLinks.vue'
 import { useMeta } from '../composables/useMeta'
 import { qrPath, qrTarget } from '../utils/qr'
 
@@ -27,12 +28,7 @@ const qr = computed(() => (meta.value.slidesUrl ? qrPath(qrTarget(meta.value.sli
         </svg>
       </div>
     </div>
-    <div class="sp-links sp-grid" :style="{ gridTemplateColumns: `repeat(${meta.links.length}, minmax(0, 1fr))` }">
-      <span v-for="link in meta.links" :key="link.label">
-        <span class="sp-mono sp-muted">{{ link.label }}</span>
-        {{ link.value }}
-      </span>
-    </div>
+    <SpLinks :links="meta.links" />
   </div>
 </template>
 
@@ -79,19 +75,5 @@ const qr = computed(() => (meta.value.slidesUrl ? qrPath(qrTarget(meta.value.sli
 .sp-qr svg {
   width: 88px;
   height: 88px;
-}
-
-.sp-links {
-  border-top: var(--sp-rule) solid var(--sp-ink);
-}
-
-.sp-links > * {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: 10px 16px;
-  font-family: var(--sp-font-mono);
-  font-size: 16px;
-  overflow-wrap: anywhere;
 }
 </style>

@@ -2,7 +2,7 @@
 
 A brutalist Swiss print theme for [Slidev](https://sli.dev): paper, ink, one red accent, 1px rules, zero radius,
 halftone photos. Light and dark. Every Slidev built-in layout is covered, plus `bullets`, `code`,
-`diagram` and `mermaid`.
+`diagram`, `mermaid`, `compare`, `about`, `stats` and `timeline`, and a `<SpBars>` chart.
 
 | Light | Dark |
 | --- | --- |
@@ -12,6 +12,10 @@ halftone photos. Light and dark. Every Slidev built-in layout is covered, plus `
 | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/code-light.jpg" alt="Code slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/code-dark.jpg" alt="Code slide, dark"> |
 | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/mermaid-light.jpg" alt="Mermaid slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/mermaid-dark.jpg" alt="Mermaid slide, dark"> |
 | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/photo-light.jpg" alt="Fullscreen photo slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/photo-dark.jpg" alt="Fullscreen photo slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/compare-light.jpg" alt="Compare slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/compare-dark.jpg" alt="Compare slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/stats-light.jpg" alt="Stats slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/stats-dark.jpg" alt="Stats slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/bars-light.jpg" alt="Bar chart slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/bars-dark.jpg" alt="Bar chart slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/timeline-light.jpg" alt="Timeline slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/timeline-dark.jpg" alt="Timeline slide, dark"> |
 | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/section-light.jpg" alt="Section slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/section-dark.jpg" alt="Section slide, dark"> |
 | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/closing-light.jpg" alt="Closing slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/closing-dark.jpg" alt="Closing slide, dark"> |
 
@@ -89,6 +93,10 @@ The first `#` heading of a slide is its display title; `*word*` puts that word i
 | `code` | `figure` | Title left with `Fig. NN / Code`, code block right |
 | `diagram` | | Title, then HTML boxes (`.flow`, `.box`, `.box.hot`, `.arrow`) |
 | `mermaid` | | Title, then a Mermaid diagram that fills the free area |
+| `compare` | `left`, `right`, `hot`, `pickLabel` | Two labelled columns (`::right::` starts the second); `hot: left\|right` inverts that header |
+| `about` | `kicker`, `caption`, `imagePosition` | Portrait, name, role and handles from metadata; the slide body is the bio, a `#` heading replaces the name |
+| `stats` | `stats` | 2 to 4 big numbers: `{ value, unit, label, note, hot }` |
+| `timeline` | `steps`, `nowLabel` | Steps on a rule: `{ when, title, text, hot }`; steps before `hot` are filled, after it hollow |
 | `default`, `center` | | Framed; plain Markdown (tables, quotes, inline code) is styled |
 | `two-cols`, `two-cols-header` | | Framed columns split by a 2px rule (`::right::`, `::left::`) |
 | `full` | | No frame, the whole slide |
@@ -128,6 +136,37 @@ flowchart LR
 
 The theme renders Mermaid itself so diagrams match the design in both color schemas. Your own `setup/mermaid.ts`
 still applies on top (for example `securityLevel: 'loose'` or extra `themeVariables`).
+
+### Numbers, steps and charts
+
+```yaml
+---
+layout: stats
+stats:
+  - { value: '40', unit: k, label: Jobs / second, note: 'Peak load, up from 6k.' }
+  - { value: '-82', unit: '%', label: p99 latency, hot: true }
+---
+```
+
+```yaml
+---
+layout: timeline
+steps:
+  - { when: Q2, title: Canary, text: 5% of jobs on the new queue. }
+  - { when: Q3, title: Ramp up, hot: true }
+  - { when: Q4, title: Cut over }
+---
+```
+
+`<SpBars>` draws a horizontal bar chart in any slide. Bars scale to the largest value; an entry whose value is not a
+number of 0 or more is skipped.
+
+```html
+<SpBars caption="ms, p99" :data="[
+  { label: 'Queue wait', value: 120 },
+  { label: 'Retry backoff', value: 410, hot: true },
+]" />
+```
 
 ### Photos
 

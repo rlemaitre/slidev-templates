@@ -14,6 +14,10 @@ const SLIDES = {
   mermaid: 26,
   photo: 32,
   closing: 16,
+  compare: 37,
+  stats: 39,
+  bars: 40,
+  timeline: 41,
 }
 
 async function waitForServer(url, timeoutMs = 120_000) {

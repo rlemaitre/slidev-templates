@@ -324,3 +324,67 @@ kicker: — Try it
 layout: iframe
 url: https://example.com
 ---
+
+---
+layout: compare
+left: Polling
+right: Push
+hot: right
+---
+
+# Polling vs *push*
+
+- Simple to build
+- Wastes calls when idle
+- Latency = poll interval
+
+::right::
+
+- Needs a live connection
+- No idle traffic
+- Latency in milliseconds
+
+---
+layout: about
+---
+
+# Alex *Martin*
+
+Builds the job queues behind a payments platform. Ten years of on-call, three of them at 3 a.m.
+
+---
+layout: stats
+stats:
+  - { value: '40', unit: k, label: Jobs / second, note: 'Peak load, up from 6k.' }
+  - { value: '-82', unit: '%', label: p99 latency, note: From 1.4 s to 250 ms., hot: true }
+  - { value: '0', label: Pages / month, note: Down from four. }
+---
+
+# After the *move*
+
+---
+
+# Where the *time* goes
+
+<SpBars
+  unit="ms"
+  caption="ms, p99"
+  :data="[
+    { label: 'Queue wait', value: 120 },
+    { label: 'Retry backoff', value: 410, hot: true },
+    { label: 'Handler', value: 180 },
+    { label: 'Ack', value: 30 },
+  ]"
+/>
+
+---
+layout: timeline
+steps:
+  - { when: Q1, title: Shadow, text: 'Copy traffic, compare results.' }
+  - { when: Q2, title: Canary, text: 5% of jobs on the new queue. }
+  - { when: Q3, title: Ramp up, text: '50%, then 100%.', hot: true }
+  - { when: Q4, title: Cut over, text: Old queue read-only. }
+  - { when: Q1 '28, title: Retire, text: Delete the old stack. }
+---
+
+# Migration *plan*
