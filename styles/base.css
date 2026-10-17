@@ -14,16 +14,16 @@
   line-height: 1.4;
 }
 
-/* Paper grain over every slide. */
+/* Paper grain over every slide: a small pre-rendered noise tile with its low alpha baked in. Blend modes and SVG
+   filters would make Chrome rasterize whole PDF pages on export (text as pixels, ~100 MB decks). */
 .slidev-layout::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 50;
   pointer-events: none;
-  opacity: 0.06;
-  mix-blend-mode: var(--sp-grain-blend);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url('../assets/grain.png');
+  background-size: 128px 128px;
 }
 
 .sp-display,

@@ -46,8 +46,7 @@ html.dark .sp-photo img {
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='5'%3E%3Ccircle cx='2.5' cy='2.5' r='1.1' fill='%230b0b0b'/%3E%3C/svg%3E");
   background-size: 5px 5px;
-  mix-blend-mode: multiply;
-  opacity: 0.35;
+  opacity: 0.3;
 }
 
 .sp-photo-caption {

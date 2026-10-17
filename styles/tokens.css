@@ -9,7 +9,6 @@
   --sp-hl-type: #1f5fa8;
   --sp-hl-string: #8a5a00;
   --sp-hl-comment: #7a7a73;
-  --sp-grain-blend: multiply;
 
   --sp-font-display: 'Archivo', 'Arial Black', sans-serif;
   --sp-font-body: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
@@ -44,7 +43,6 @@ html.dark {
   --sp-hl-type: #7fb0e6;
   --sp-hl-string: #e0b060;
   --sp-hl-comment: #8a8a84;
-  --sp-grain-blend: screen;
   --slidev-code-background: var(--sp-code-bg);
   --slidev-code-foreground: var(--sp-ink);
 }
