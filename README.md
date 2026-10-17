@@ -123,7 +123,14 @@ and halftone treatment. `imagePosition` sets the crop focus (default `50% 30%`).
 
 ## Demo
 
-`example/slides.md` shows every layout. Run `npm run dev` in this repo.
+See every layout at [rlemaitre.github.io/slidev-templates](https://rlemaitre.github.io/slidev-templates/). The source
+is `example/slides.md`; run `npm run dev` in this repo to edit it live.
+
+## Releases
+
+Commits on `main` follow [Conventional Commits](https://www.conventionalcommits.org). release-please keeps a release
+pull request open with the next version and the changelog; merging it tags the release and publishes it to npm with
+provenance.
 
 ## Credits
 
