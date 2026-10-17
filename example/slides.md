@@ -74,3 +74,56 @@ Left side
 ::right::
 
 Right side
+
+---
+layout: cover
+subtitle: What message queues really buy you, what they cost, and how to tell when you need one.
+---
+
+# Queues are not *magic*.
+
+---
+layout: cover
+date: ''
+---
+
+# No date here
+
+---
+layout: intro
+---
+
+# Intro *layout*
+
+---
+layout: section
+---
+
+# Why *queues*
+
+---
+layout: section
+---
+
+# Back *pressure*
+
+---
+layout: section
+---
+
+# *Retries*
+
+---
+layout: section
+---
+
+# *Costs*
+
+---
+layout: end
+---
+
+---
+layout: end
+slidesUrl: ''
+---
