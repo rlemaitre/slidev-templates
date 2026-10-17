@@ -1,0 +1,38 @@
+/* Swiss print tokens. Light on :root, dark when Slidev sets html.dark. Keep in sync with utils/tokens.ts. */
+:root {
+  --sp-bg: #f4f4f0;
+  --sp-ink: #0b0b0b;
+  --sp-muted: #5a5a55;
+  --sp-accent: #d01414;
+  --sp-code-bg: #e9e8e2;
+  --sp-hl-keyword: #e61919;
+  --sp-hl-type: #1f5fa8;
+  --sp-hl-string: #8a5a00;
+  --sp-hl-comment: #7a7a73;
+  --sp-grain-blend: multiply;
+
+  --sp-font-display: 'Archivo', 'Arial Black', sans-serif;
+  --sp-font-body: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
+  --sp-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --sp-rule: 1px;
+  --sp-rule-thick: 2px;
+  --sp-size-label: 16px;
+  --sp-size-body: 26px;
+  --sp-size-title: 44px;
+  --sp-size-statement: 100px;
+  --sp-pad: 32px;
+}
+
+html.dark {
+  --sp-bg: #121212;
+  --sp-ink: #eaeaea;
+  --sp-muted: #9a9a94;
+  --sp-accent: #ff2a2a;
+  --sp-code-bg: #1d1d1d;
+  --sp-hl-keyword: #ff2a2a;
+  --sp-hl-type: #7fb0e6;
+  --sp-hl-string: #e0b060;
+  --sp-hl-comment: #8a8a84;
+  --sp-grain-blend: screen;
+}

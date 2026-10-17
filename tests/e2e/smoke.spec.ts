@@ -1,7 +1,8 @@
 import { expect, test } from '@playwright/test'
+import { openSlide } from './slide'
 
 test('demo deck renders its first slide with the theme default layout', async ({ page }) => {
-  await page.goto('/1')
-  await expect(page.locator('.slidev-layout.default')).toBeVisible()
-  await expect(page.locator('.slidev-layout h1')).toHaveText('Hello')
+  const layout = await openSlide(page, 1)
+  await expect(layout).toHaveClass(/\bdefault\b/)
+  await expect(layout.locator('h1')).toHaveText('Hello world')
 })
