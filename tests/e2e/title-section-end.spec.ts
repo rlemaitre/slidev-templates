@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test'
 import { colors } from './colors'
 import { openSlide } from './slide'
 
-const SLIDES = { cover: 9, coverNoDate: 10, intro: 11, section: 13, end: 16, endNoUrl: 17 } as const
+const SLIDES = { cover: 1, coverNoDate: 10, intro: 11, section: 13, end: 16, endNoUrl: 17 } as const
 const SECTION_COUNT = 4
 
 test('cover shows the title with an accent word, the speaker and the meta row', async ({ page }) => {

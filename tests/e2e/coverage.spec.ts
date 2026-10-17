@@ -9,8 +9,8 @@ const LAYOUTS = readdirSync(fileURLToPath(new URL('../../layouts', import.meta.u
 
 test('demo deck contains every layout the theme ships', async ({ page }) => {
   test.setTimeout(120_000)
-  const first = await openSlide(page, 1)
-  const total = Number((await first.locator('.sp-bar-page').textContent())!.split('/')[1].trim())
+  const framed = await openSlide(page, 2)
+  const total = Number((await framed.locator('.sp-bar-page').textContent())!.split('/')[1].trim())
   const used = new Set<string>()
   for (let n = 1; n <= total; n++) {
     const layout = await openSlide(page, n)

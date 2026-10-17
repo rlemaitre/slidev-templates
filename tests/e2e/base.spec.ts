@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test'
 import { colors } from './colors'
 import { openSlide } from './slide'
 
-const SLIDES = { hello: 1, markdown: 2 } as const
+const SLIDES = { cover: 1, hello: 2, markdown: 3 } as const
 
 test('slide surface uses paper and ink of the active scheme', async ({ page }, info) => {
   const layout = await openSlide(page, SLIDES.hello)
@@ -21,7 +21,7 @@ test('slides have no background texture', async ({ page }) => {
 })
 
 test('photo halftone uses no blend mode', async ({ page }) => {
-  const layout = await openSlide(page, 9)
+  const layout = await openSlide(page, SLIDES.cover)
   const blend = await layout.locator('.sp-photo').first().evaluate(el => getComputedStyle(el, '::after').mixBlendMode)
   expect(blend).toBe('normal')
 })

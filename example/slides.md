@@ -2,7 +2,8 @@
 theme: ../
 colorSchema: auto
 title: Queues are not magic
-layout: default
+layout: cover
+subtitle: What message queues really buy you, what they cost, and how to tell when you need one.
 themeConfig:
   event: DevConf 2027
   location: Lyon
@@ -10,11 +11,17 @@ themeConfig:
   slidesUrl: alex.example/talks/queues
 ---
 
+# Queues are not *magic*.
+
+---
+layout: default
+---
+
 # Hello *world*
 
 ---
 
-# Plain Markdown
+# Plain *Markdown*
 
 A paragraph with `inline code`.
 
@@ -30,32 +37,32 @@ layout: default
 event: ''
 ---
 
-# No event on this slide
+# No *event* on this slide
 
 ---
 layout: default
 frame: false
 ---
 
-# No frame
+# No *frame*
 
 ---
 layout: full
 ---
 
-# Full bleed
+# Full *bleed*
 
 ---
 layout: center
 ---
 
-# Centered
+# *Centered*
 
 ---
 layout: two-cols
 ---
 
-# Left column
+# Left *column*
 
 ::right::
 
@@ -65,7 +72,7 @@ Right
 layout: two-cols-header
 ---
 
-# Header
+# Column *header*
 
 ::left::
 
@@ -74,13 +81,6 @@ Left side
 ::right::
 
 Right side
-
----
-layout: cover
-subtitle: What message queues really buy you, what they cost, and how to tell when you need one.
----
-
-# Queues are not *magic*.
 
 ---
 layout: cover

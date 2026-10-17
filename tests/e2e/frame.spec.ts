@@ -1,14 +1,14 @@
 import { expect, test } from '@playwright/test'
 import { openSlide } from './slide'
 
-const SLIDES = { framed: 1, noEvent: 3, noFrame: 4, full: 5, center: 6, twoCols: 7, twoColsHeader: 8 } as const
+const SLIDES = { framed: 2, noEvent: 4, noFrame: 5, full: 6, center: 7, twoCols: 8, twoColsHeader: 9 } as const
 
 test('default layout shows the frame with metadata', async ({ page }) => {
   const layout = await openSlide(page, SLIDES.framed)
   await expect(layout.locator('.sp-bar-speaker')).toHaveText('Alex Martin')
   await expect(layout.locator('.sp-bar-event')).toHaveText('DevConf 2027')
   await expect(layout.locator('.sp-bar-page')).toHaveText(/^\d{2} \/ \d{2}$/)
-  await expect(layout.locator('.sp-bar-page')).toHaveText(/^01 \//)
+  await expect(layout.locator('.sp-bar-page')).toHaveText(/^02 \//)
   await expect(layout.locator('.sp-foot')).toContainText('alex.example')
   await expect(layout.locator('.sp-bar')).toHaveCSS('border-bottom-width', '2px')
 })
@@ -48,7 +48,7 @@ test('two-cols renders the right slot after a 2px rule', async ({ page }) => {
 
 test('two-cols-header renders header, left and right', async ({ page }) => {
   const layout = await openSlide(page, SLIDES.twoColsHeader)
-  await expect(layout.locator('.sp-cols-header h1')).toHaveText('Header')
+  await expect(layout.locator('.sp-cols-header h1')).toHaveText('Column header')
   await expect(layout.locator('.sp-col-left')).toHaveText('Left side')
   await expect(layout.locator('.sp-col-right')).toHaveText('Right side')
   await expect(layout.locator('.sp-cols-header')).toHaveCSS('border-bottom-width', '2px')
