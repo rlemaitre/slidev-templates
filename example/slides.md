@@ -311,3 +311,16 @@ url: https://example.com
 ---
 
 # Live *demo*
+
+---
+layout: iframe-right
+url: https://example.com
+kicker: — Try it
+---
+
+# Embedded *page*
+
+---
+layout: iframe
+url: https://example.com
+---
