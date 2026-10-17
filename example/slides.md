@@ -209,3 +209,52 @@ def delay(job: Job): Long =
   1000L * math.pow(2, job.attempts).toLong
 ```
 
+
+---
+layout: diagram
+---
+
+# Where the *time* goes
+
+<div class="flow">
+  <div class="box"><span class="sp-mono">01</span><b>Producer</b></div>
+  <div class="arrow">→</div>
+  <div class="box hot"><span class="sp-mono">02 · 80%</span><b>Queue</b></div>
+  <div class="arrow">→</div>
+  <div class="box"><span class="sp-mono">03</span><b>Consumer</b></div>
+</div>
+
+---
+layout: mermaid
+---
+
+# Job *lifecycle*
+
+```mermaid
+flowchart LR
+  Q[QUEUED] -->|pick| R[RUNNING]
+  R -->|ok| D[DONE]
+  R e1@-->|fail| W[RETRY WAIT]
+  W -->|backoff| Q
+  class R hot
+  class e1 hot
+```
+
+---
+layout: mermaid
+---
+
+# Who calls *whom*
+
+```mermaid
+sequenceDiagram
+  participant P as Producer
+  participant Q as Queue
+  participant C as Consumer
+  P->>Q: publish(job)
+  Q->>C: deliver(job)
+  activate C
+  C-->>Q: ack
+  deactivate C
+  Note over Q,C: at-least-once
+```
