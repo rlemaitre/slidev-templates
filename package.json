@@ -66,5 +66,8 @@
   },
   "peerDependencies": {
     "mermaid": ">=11.6.0"
+  },
+  "overrides": {
+    "dompurify": "^3.4.16"
   }
 }
