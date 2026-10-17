@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "bootstrap-sha": "63b60f5f74abdf60cc2c0442a4b8e85741a1072b",
+  "packages": {
+    ".": {
+      "release-type": "node",
+      "package-name": "slidev-theme-swiss-print",
+      "include-component-in-tag": false,
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false
+    }
+  }
+}

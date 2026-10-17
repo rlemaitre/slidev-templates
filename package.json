@@ -30,11 +30,13 @@
   "scripts": {
     "dev": "slidev example/slides.md --port 3030 --open false",
     "build:demo": "slidev build example/slides.md --out ../dist/demo",
+    "build:pages": "slidev build example/slides.md --base /slidev-templates/ --out ../dist/pages && cp dist/pages/index.html dist/pages/404.html",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "export:light": "slidev export example/slides.md --output dist/demo-light.pdf",
     "export:dark": "slidev export example/slides.md --dark --output dist/demo-dark.pdf",
     "smoke": "bash scripts/smoke-pack.sh",
+    "screenshots": "node scripts/screenshots.mjs",
     "check": "npm run test && npm run test:e2e && npm run build:demo && npm run export:light && npm run export:dark && npm run smoke"
   },
   "slidev": {

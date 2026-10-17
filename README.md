@@ -4,6 +4,19 @@ A brutalist Swiss print theme for [Slidev](https://sli.dev): paper, ink, one red
 halftone photos. Light and dark. Every Slidev built-in layout is covered, plus `bullets`, `code`,
 `diagram` and `mermaid`.
 
+| Light | Dark |
+| --- | --- |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/cover-light.jpg" alt="Cover slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/cover-dark.jpg" alt="Cover slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/statement-light.jpg" alt="Statement slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/statement-dark.jpg" alt="Statement slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/bullets-light.jpg" alt="Bullets slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/bullets-dark.jpg" alt="Bullets slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/code-light.jpg" alt="Code slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/code-dark.jpg" alt="Code slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/mermaid-light.jpg" alt="Mermaid slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/mermaid-dark.jpg" alt="Mermaid slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/photo-light.jpg" alt="Fullscreen photo slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/photo-dark.jpg" alt="Fullscreen photo slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/section-light.jpg" alt="Section slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/section-dark.jpg" alt="Section slide, dark"> |
+| <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/closing-light.jpg" alt="Closing slide, light"> | <img src="https://raw.githubusercontent.com/rlemaitre/slidev-templates/main/docs/screenshots/closing-dark.jpg" alt="Closing slide, dark"> |
+
+Browse the whole demo deck at [rlemaitre.com/slidev-templates](https://rlemaitre.com/slidev-templates/).
+
 ## Install
 
 ```bash
@@ -123,7 +136,14 @@ and halftone treatment. `imagePosition` sets the crop focus (default `50% 30%`).
 
 ## Demo
 
-`example/slides.md` shows every layout. Run `npm run dev` in this repo.
+See every layout at [rlemaitre.com/slidev-templates](https://rlemaitre.com/slidev-templates/). The source
+is `example/slides.md`; run `npm run dev` in this repo to edit it live.
+
+## Releases
+
+Commits on `main` follow [Conventional Commits](https://www.conventionalcommits.org). release-please keeps a release
+pull request open with the next version and the changelog; merging it tags the release and publishes it to npm with
+provenance.
 
 ## Credits
 

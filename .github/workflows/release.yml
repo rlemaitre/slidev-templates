@@ -1,0 +1,35 @@
+name: release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  id-token: write # npm trusted publishing and provenance
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - id: release
+        uses: googleapis/release-please-action@v5
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+      - if: steps.release.outputs.release_created
+        uses: actions/checkout@v7
+      - if: steps.release.outputs.release_created
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - if: steps.release.outputs.release_created
+        run: npm ci
+      - if: steps.release.outputs.release_created
+        run: npm test
+      # No token: npm authenticates this workflow through OIDC (trusted publisher set on npmjs.com)
+      - if: steps.release.outputs.release_created
+        run: npm publish --provenance --access public
