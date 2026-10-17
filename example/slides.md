@@ -127,3 +127,49 @@ layout: end
 layout: end
 slidesUrl: ''
 ---
+
+---
+layout: statement
+kicker: — The point
+---
+
+# Latency is a *feature*.
+
+---
+layout: fact
+kicker: — In production
+caption: messages per second at peak, one consumer group
+---
+
+# 40*k*
+
+---
+layout: quote
+cite: Every on-call engineer, eventually
+---
+
+# A queue is a buffer with *opinions*.
+
+---
+layout: bullets
+kicker: — Agenda
+---
+
+# What we'll *cover*
+
+<ol>
+  <li>When a queue actually helps</li>
+  <li class="hot">Backpressure, or why queues fill up</li>
+  <li>Retries without duplicates</li>
+  <li>What it costs to run</li>
+</ol>
+
+---
+layout: bullets
+---
+
+# Plain *list*
+
+- Producers publish
+- Consumers acknowledge
+- Brokers redeliver
