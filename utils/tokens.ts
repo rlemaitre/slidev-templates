@@ -24,6 +24,6 @@ export const PALETTES: Readonly<Record<Mode, Palette>> = {
 }
 
 export const CODE_HUES: Readonly<Record<Mode, CodeHues>> = {
-  light: { keyword: '#e61919', type: '#1f5fa8', string: '#8a5a00', comment: '#7a7a73' },
+  light: { keyword: '#d01414', type: '#1f5fa8', string: '#8a5a00', comment: '#696962' },
   dark: { keyword: '#ff2a2a', type: '#7fb0e6', string: '#e0b060', comment: '#8a8a84' },
 }
