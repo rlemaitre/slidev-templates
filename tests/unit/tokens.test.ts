@@ -32,7 +32,7 @@ describe('tokens', () => {
   test('palettes hold the spec values', () => {
     expect(PALETTES.light).toEqual({ bg: '#f4f4f0', ink: '#0b0b0b', muted: '#5a5a55', accent: '#d01414', codeBg: '#e9e8e2' })
     expect(PALETTES.dark).toEqual({ bg: '#121212', ink: '#eaeaea', muted: '#9a9a94', accent: '#ff2a2a', codeBg: '#1d1d1d' })
-    expect(CODE_HUES.light).toEqual({ keyword: '#e61919', type: '#1f5fa8', string: '#8a5a00', comment: '#7a7a73' })
+    expect(CODE_HUES.light).toEqual({ keyword: '#d01414', type: '#1f5fa8', string: '#8a5a00', comment: '#696962' })
     expect(CODE_HUES.dark).toEqual({ keyword: '#ff2a2a', type: '#7fb0e6', string: '#e0b060', comment: '#8a8a84' })
   })
 })

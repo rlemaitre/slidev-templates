@@ -18,8 +18,8 @@ html.dark .slidev-layout .shiki span {
 }
 
 /* Keywords are weight 500; Shiki themes cannot carry a font weight, so match the keyword hue Shiki inlines. */
-.slidev-layout .shiki span[style*='--shiki-light: #E61919' i],
-.slidev-layout .shiki span[style*='--shiki-light:#E61919' i] {
+.slidev-layout .shiki span[style*='--shiki-light: #D01414' i],
+.slidev-layout .shiki span[style*='--shiki-light:#D01414' i] {
   font-weight: 500;
 }
 

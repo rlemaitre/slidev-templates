@@ -7,9 +7,9 @@ function colorFor(mode: 'light' | 'dark', scope: string) {
 }
 
 describe('swissShikiTheme', () => {
-  test('light theme maps keyword scopes to #e61919', () => {
+  test('light theme maps keyword scopes to #d01414', () => {
     for (const scope of ['keyword', 'storage', 'storage.type', 'storage.modifier', 'keyword.control'])
-      expect(colorFor('light', scope)?.foreground, scope).toBe('#e61919')
+      expect(colorFor('light', scope)?.foreground, scope).toBe('#d01414')
   })
 
   test('dark theme maps type scopes to #7fb0e6', () => {
@@ -23,7 +23,7 @@ describe('swissShikiTheme', () => {
   })
 
   test('comments are italic in both modes', () => {
-    expect(colorFor('light', 'comment')).toEqual({ foreground: '#7a7a73', fontStyle: 'italic' })
+    expect(colorFor('light', 'comment')).toEqual({ foreground: '#696962', fontStyle: 'italic' })
     expect(colorFor('dark', 'comment')).toEqual({ foreground: '#8a8a84', fontStyle: 'italic' })
   })
 

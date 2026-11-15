@@ -3,7 +3,7 @@ import { colors } from './colors'
 import { openSlide } from './slide'
 
 const SLIDES = { typescript: 23, scala: 24 } as const
-const KEYWORD = { light: 'rgb(230, 25, 25)', dark: 'rgb(255, 42, 42)' } as const
+const KEYWORD = { light: 'rgb(208, 20, 20)', dark: 'rgb(255, 42, 42)' } as const
 const TYPE = { light: 'rgb(31, 95, 168)', dark: 'rgb(127, 176, 230)' } as const
 
 const mode = (name: string) => (name === 'dark' ? 'dark' : 'light')
